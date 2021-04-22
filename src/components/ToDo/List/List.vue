@@ -73,8 +73,8 @@ export default {
     }
     .list-select {
       border-radius: 50%;
-      width: 32px;
-      height: 32px;
+      min-width: 34px;
+      min-height: 34px;
       border: 1px solid #f0f0f0;
       margin-right: 5px;
       cursor: pointer;
