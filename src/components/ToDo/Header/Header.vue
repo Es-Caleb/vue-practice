@@ -44,6 +44,7 @@ export default {
     width: 32px;
     height: 32px;
     margin-right: 6px;
+    cursor: pointer;
   }
   .todo-inputBox {
     width: 100%;

@@ -77,6 +77,7 @@ export default {
       height: 32px;
       border: 1px solid #f0f0f0;
       margin-right: 5px;
+      cursor: pointer;
     }
     .list-input {
       width: 100%;
@@ -105,6 +106,7 @@ export default {
         .list-delete {
           width: 32px;
           height: 32px;
+          cursor: pointer;
         }
       }
   }
