@@ -74,10 +74,13 @@ export default {
     .list-select {
       border-radius: 50%;
       min-width: 34px;
-      min-height: 34px;
+      height: 34px;
       border: 1px solid #f0f0f0;
       margin-right: 5px;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .list-input {
       width: 100%;
