@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3>题目描述：</h3>
-    <div>将arr数据</div>
+    <div>将arr数据处理成options所示</div>
     <el-cascader :options="options" :props="props"></el-cascader>
   </div>
 </template>
