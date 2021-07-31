@@ -4,7 +4,14 @@
       <div class="list-select" @click="seleteItem(item.id)">
         <img v-if="item.status === 1" src="../../../assets/select.png" />
       </div>
-      <input class="list-input" :class="{'input-select': item.status === 1}" v-model="item.thing" @focus="disImg()" @blur="focusNo($event)" @keyup.enter="focusNo($event)" />
+      <input
+        class="list-input"
+        :class="{ 'input-select': item.status === 1 }"
+        v-model="item.thing"
+        @focus="disImg()"
+        @blur="focusNo($event)"
+        @keyup.enter="focusNo($event)"
+      />
       <div class="list-deleteBox" v-show="focusDisplay">
         <img class="list-delete" src="../../../assets/delete.png" @click="deleteTodo(item.id)" />
       </div>
@@ -14,37 +21,37 @@
 
 <script>
 export default {
-  name: 'List',
+  name: "List",
   props: {
     list: {
       type: Array
-    },
+    }
   },
   data() {
     return {
-			focusDisplay: true,
-    }
+      focusDisplay: true
+    };
   },
   methods: {
     // 取消焦点
-		focusNo(event) {
-			event.target.blur();
-			this.focusDisplay = true;
-		},
-		// 获得焦点时隐藏删除图片
-		disImg() {
-			this.focusDisplay = false;
-		},
+    focusNo(event) {
+      event.target.blur();
+      this.focusDisplay = true;
+    },
+    // 获得焦点时隐藏删除图片
+    disImg() {
+      this.focusDisplay = false;
+    },
     // 选择该条
     seleteItem(id) {
-      this.$emit('seleteItem', id);
+      this.$emit("seleteItem", id);
     },
     // 删除该条
     deleteTodo(id) {
-			this.$emit('deleteTodo', id);
-		},
+      this.$emit("deleteTodo", id);
+    }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -89,16 +96,16 @@ export default {
       padding: 14px 20px;
       color: #797878;
       line-height: 1;
-      &::-webkit-input-placeholder{
-        color:#dbdbdb;
+      &::-webkit-input-placeholder {
+        color: #dbdbdb;
       }
-      &:focus{
+      &:focus {
         box-shadow: 2px 0px 5px #797878 inset;
         // border-radius: 3px;
       }
       &.input-select {
         text-decoration: line-through;
-        color:#dbdbdb;
+        color: #dbdbdb;
       }
     }
     .list-deleteBox {
@@ -106,12 +113,12 @@ export default {
       height: 32px;
       margin-right: 20px;
       visibility: hidden;
-        .list-delete {
-          width: 32px;
-          height: 32px;
-          cursor: pointer;
-        }
+      .list-delete {
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
       }
+    }
   }
 }
 </style>

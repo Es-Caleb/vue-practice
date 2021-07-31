@@ -2,19 +2,19 @@
   <div class="todo-footer">
     <div class="todo-sums">{{ itemNum }} items left</div>
     <div class="todo-label">
-      <div class="label-option" :class="{'select': type === 0}" @click="changetype(0)">All</div>
-      <div class="label-option" :class="{'select': type === 1}" @click="changetype(1)">Active</div>
-      <div class="label-option" :class="{'select': type === 2}" @click="changetype(2)">Completed</div>
+      <div class="label-option" :class="{ select: type === 0 }" @click="changetype(0)">All</div>
+      <div class="label-option" :class="{ select: type === 1 }" @click="changetype(1)">Active</div>
+      <div class="label-option" :class="{ select: type === 2 }" @click="changetype(2)">Completed</div>
     </div>
     <div class="todo-clear">
-      <span v-if="clearDisplay" @click="clearLists()">Clear Completed</span>	
+      <span v-if="clearDisplay" @click="clearLists()">Clear Completed</span>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Footer',
+  name: "Footer",
   props: {
     itemNum: {
       type: Number,
@@ -27,23 +27,20 @@ export default {
     type: {
       type: Number,
       default: 0
-    },
-
+    }
   },
   data() {
-    return {
-      
-    }
+    return {};
   },
   methods: {
     changetype(e) {
-      this.$emit('changetype', e);
+      this.$emit("changetype", e);
     },
     clearLists() {
-      this.$emit('clearLists');
+      this.$emit("clearLists");
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -62,7 +59,7 @@ export default {
       margin-right: 20px;
       padding: 5px 6px;
       line-height: 1;
-      border: 1px solid #FFF;
+      border: 1px solid #fff;
       border-radius: 3px;
       cursor: pointer;
       &:last-of-type {

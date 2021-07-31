@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <div class="home-menus">
-      <div class="catalog" @click="goTodo()">ToDo</div>
+      <div class="catalog" @click="goRouter('/todo')">ToDo</div>
+      <el-button @click="goRouter('/test')">题目</el-button>
     </div>
   </div>
 </template>
@@ -10,11 +11,10 @@
 // @ is an alias to /src
 export default {
   name: "Home",
-  components: {
-  },
+  components: {},
   methods: {
-    goTodo() {
-      this.$router.push('/todo');
+    goRouter(url) {
+      this.$router.push(url);
     }
   }
 };
@@ -30,7 +30,7 @@ export default {
       background: #0bf8b1;
       border-radius: 5px;
       text-align: center;
-      color: #FFFFFF;
+      color: #ffffff;
       cursor: pointer;
       width: 100px;
     }

@@ -8,28 +8,28 @@
 
 <script>
 export default {
-  name: 'Header',
+  name: "Header",
   props: {
     seleteStatus: {
       type: Boolean,
       default: true
-    },
+    }
   },
   data() {
     return {
-      needTodo: '',
-    }
+      needTodo: ""
+    };
   },
   methods: {
     seleteAll(e) {
-      this.$emit('seleteAll', e);
+      this.$emit("seleteAll", e);
     },
     addTodo() {
-      this.$emit('addTodo', this.needTodo);
-      this.needTodo = '';
+      this.$emit("addTodo", this.needTodo);
+      this.needTodo = "";
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -51,8 +51,8 @@ export default {
     height: 40px;
     font-size: 35px;
     color: #797878;
-    &::-webkit-input-placeholder{
-      color:#dbdbdb;
+    &::-webkit-input-placeholder {
+      color: #dbdbdb;
     }
   }
 }
